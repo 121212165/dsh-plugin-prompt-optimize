@@ -1,0 +1,69 @@
+{
+  "name": "dsh-plugin-prompt-optimize",
+  "version": "0.1.0",
+  "description": "dsh plugin: 提示词审查与改写（与 prompt-vault 分工：vault 存、本插件审）——8 条本地规则出问题清单，模板重排生成改写稿；/opt 与 prompt_review / prompt_rewrite。",
+  "type": "module",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json",
+    "./locale/*": "./locale/*",
+    "./icon.svg": "./icon.svg"
+  },
+  "files": [
+    "lib",
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "icon.svg",
+    "locale"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "prompt",
+    "review",
+    "rewrite"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/121212165/dsh-plugin-prompt-optimize.git"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.2",
+    "@deepseek-ai/dsh-base": "^0.1.2-alpha.4",
+    "@deepseek-ai/dsh-system-prompt": "^0.1.2-alpha.4",
+    "@deepseek-ai/dsh-tools": "^0.1.2-alpha.4",
+    "@deepseek-ai/schemastery": "3.18.2",
+    "@types/node": "26.6.2",
+    "typescript": "7.0.2"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0"
+  },
+  "icon": "./icon.svg"
+}

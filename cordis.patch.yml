@@ -1,0 +1,9 @@
+- insert:
+    - id: prompt-optimize
+      name: dsh-plugin-prompt-optimize
+      config:
+        enabled: true
+        # dataDir: ~/.dsh/prompt-optimize
+        useLLM: false       # 改写加 llm 服务二稿润色（默认纯本地规则）
+        maxHistory: 2000    # history.jsonl 上限（FIFO 淘汰）
+        order: 780          # prompt section order
