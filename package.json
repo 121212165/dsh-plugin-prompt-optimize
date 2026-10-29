@@ -25,6 +25,11 @@
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "catalog": {
+      "category": "工具与质量",
+      "blurb": "提示词审查与改写：8 条本地规则出问题清单，模板重排生成改写稿（vault 存、本插件审）",
+      "entries": "`/opt` `prompt_review` `prompt_rewrite`"
     }
   },
   "engines": {
